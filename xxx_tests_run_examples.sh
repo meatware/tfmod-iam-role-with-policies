@@ -1,6 +1,28 @@
 #!/bin/bash
 
+######################################################
+# Error Check Script
 set -e
+function trap_debugger () {
+    # Function to output script error & slack alert via alt script
+    local parent_lineno="$1"
+    local message="$2"
+    local code="${3:-1}"
+
+    if [[ -n "$message" ]] ; then
+        echo "Error on or near line ${parent_lineno}: ${message}; command yielded exit code ${code}"
+    else
+        echo "Error on or near line ${parent_lineno}; command yielded exit code ${code}"
+    fi
+
+    exit "${code}"
+}
+
+# keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+
+trap 'trap_debugger ${LINENO}' ERR
+######################################################
 
 
 if [ "$#" -ne 1 ]; then

@@ -1,16 +1,34 @@
 variable "role_name" {
-  description = "AWS IAM role name"
+  description = "AWS IAM role name. String must end with -$env"
   type        = string
+  validation {
+    condition = (
+      can(regex("(dev|uat|prod|live-test)$", var.role_name))
+    )
+    error_message = "Invalid. Must end with: 'dev', 'uat', 'prod', 'live-test'."
+  }
 }
 
 variable "role_desc" {
   description = "AWS IAM role description"
   type        = string
+  validation {
+    condition = (
+      can(regex("(dev|uat|prod|live-test)$", var.role_desc))
+    )
+    error_message = "Invalid. Must end with : 'dev', 'uat', 'prod', 'live-test'."
+  }
 }
 
 variable "role_path" {
   description = "AWS IAM role path location"
   type        = string
+  validation {
+    condition = (
+      can(regex("/(lambda|ec2|live-test)/", var.role_path))
+    )
+    error_message = "Invalid. Must start with: /(live-test|lambda|ec2)*."
+  }
 }
 
 variable "trusted_entity_principals" {
