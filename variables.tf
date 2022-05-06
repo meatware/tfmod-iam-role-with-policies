@@ -10,7 +10,7 @@ variable "role_name" {
 }
 
 variable "role_desc" {
-  description = "AWS IAM role description"
+  description = "AWS IAM role description. String must end with -$env"
   type        = string
   validation {
     condition = (
@@ -21,7 +21,7 @@ variable "role_desc" {
 }
 
 variable "role_path" {
-  description = "AWS IAM role path location"
+  description = "AWS IAM role path location. String must begin with '/(live-test|lambda|ec2)*'"
   type        = string
   validation {
     condition = (
