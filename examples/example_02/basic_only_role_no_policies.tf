@@ -22,7 +22,7 @@ variable "env" {
 variable "app_name" {
   description = "Aplication name"
   type        = string
-  default     = "tfmod-rolepol-gen-eg1"
+  default     = "tfmod-rolepol-gen-eg2"
 }
 
 variable "trusted_entity_principals" {
@@ -49,8 +49,8 @@ module "basic_role_example" {
   role_path = local.role_path
 
   trusted_entity_principals = var.trusted_entity_principals
-  custom_policies           = local.custom_policies
-  managed_policies          = local.managed_policies
+  custom_policies           = {}
+  managed_policies          = {}
 
   tags = { Name = local.role_name }
 }

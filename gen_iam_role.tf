@@ -1,4 +1,3 @@
-
 resource "aws_iam_role" "this" {
   name_prefix = var.role_name
 
@@ -12,7 +11,7 @@ resource "aws_iam_role" "this" {
       {
         Action    = "sts:AssumeRole"
         Effect    = "Allow"
-        Sid       = "tfmod"
+        Sid       = "tfmod1"
         Principal = var.trusted_entity_principals
       },
     ]

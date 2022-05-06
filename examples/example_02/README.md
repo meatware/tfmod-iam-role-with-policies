@@ -24,7 +24,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_name"></a> [app\_name](#input\_app\_name) | Aplication name | `string` | `"tfmod-rolepol-gen-eg1"` | no |
+| <a name="input_app_name"></a> [app\_name](#input\_app\_name) | Aplication name | `string` | `"tfmod-rolepol-gen-eg2"` | no |
 | <a name="input_env"></a> [env](#input\_env) | Deployment environment. e.g. dev, uat, prod | `string` | `"live-test"` | no |
 | <a name="input_trusted_entity_principals"></a> [trusted\_entity\_principals](#input\_trusted\_entity\_principals) | IAM Trusted entity principals | `map(string)` | <pre>{<br>  "Service": "ec2.amazonaws.com"<br>}</pre> | no |
 

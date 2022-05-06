@@ -26,7 +26,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_custom_policies"></a> [custom\_policies](#input\_custom\_policies) | Map of maps containing IAM policy definitions. Map key is used as policy name | `any` | n/a | yes |
-| <a name="input_managed_policies"></a> [managed\_policies](#input\_managed\_policies) | Map of maps containing predinied IAM managed policy arns. | `any` | n/a | yes |
+| <a name="input_managed_policies"></a> [managed\_policies](#input\_managed\_policies) | Map of maps containing predinied IAM managed policy arns. | `map(string)` | n/a | yes |
 | <a name="input_role_desc"></a> [role\_desc](#input\_role\_desc) | AWS IAM role description | `string` | n/a | yes |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | AWS IAM role name | `string` | n/a | yes |
 | <a name="input_role_path"></a> [role\_path](#input\_role\_path) | AWS IAM role path location | `string` | n/a | yes |
