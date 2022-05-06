@@ -49,10 +49,10 @@ module "basic_role_example" {
   role_path = local.role_path
 
   trusted_entity_principals = var.trusted_entity_principals
-  custom_policies = local.custom_policies
-  managed_policies = local.managed_policies
+  custom_policies           = local.custom_policies
+  managed_policies          = local.managed_policies
 
-  tags = {Name = local.role_name}
+  tags = { Name = local.role_name }
 }
 
 ################################
